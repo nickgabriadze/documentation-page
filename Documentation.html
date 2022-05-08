@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+
+<link rel="stylesheet" href="style.css">
+
+<main id="main-doc">
+<body>
+<div id="whole-thing">
+<div id="nav-box">
+    
+<nav id="navbar">
+    <header id="py-doc">Python Documentation
+        <img id="py-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="Python Logo">
+    </header>
+    <div class="nav-link">
+     <hr>
+     <a id="first" href="#what_is_python"><h1 id="introduction">What is Python?</h1></a>
+     <hr>
+     <a id="second" href="#must_know"><h1 id="must-know">Must Know</h1></a>
+     <hr>
+     <a id="third" href="#informal_stuff"><h1 id="informal">An Informal Introduction</h1></a>
+     <hr>
+     <a id="fourth" href="#more_controlling_tools"><h1 id="more-control">More Controlling Tools</h1></a>
+     <hr>
+     <a id="fifth" href="#data_structures"><h1 id="data-structures">Data Structures</h1></a>
+     <hr>
+     <a id="sixth" href="#modules-py"><h1 id="modules">Modules</h1></a>
+     <hr>
+     <a id="seventh" href="#input_output"><h1 id="i-o">Input And Output</h1></a>
+     <hr>
+     <a id="eighth" href="#errors_exceptions"><h1 id="errors">Errors And Exceptions</h1></a>
+     <hr>
+     <a id="nineth" href="#classes_py"><h1 id="classes">Classes</h1></a>
+     <hr>
+     <a id="tenth" href="#what_is_next"><h1 id="whats-next">What's Next?</h1></a>
+    </div>
+</nav>
+</div>
+
+<div id="section-box">
+<section class="main-section">
+    <header id="what_is_python">What is Pyton?
+       <p id="about">Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python's elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.
+        The Python interpreter and the extensive standard library are freely available in source or binary form for all major platforms from the Python web site (<a id="link-to-py-org" target="_blank" href="https://www.python.org/">python.org</a>) and may be freely distributed. The same site also contains distributions of and pointers to many free third party Python modules, programs and tools, and additional documentation.
+        The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p> 
+    </header>
+
+    <header id="must_know">Must Know
+        <p id="m-k-about">If you do much work on computers, eventually you find that there's some task you'd like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you'd like to write a small custom database, or a specialized GUI application, or a simple game.
+            If you're a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you're writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you've written a program that could use an extension language, and you don't want to design and implement a whole new language for your application.   
+            Python is just the language for you.
+            You could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files and changing text data, not well-suited for GUI applications or games. You could write a C/C++/Java program, but it can take a lot of development time to get even a first-draft program. Python is simpler to use, available on Windows, macOS, and Unix operating systems, and will help you get the job done more quickly.  
+            Python is simple to use, but it is a real programming language, offering much more structure and support for large programs than shell scripts or batch files can offer. On the other hand, Python also offers much more error checking than C, and, being a very-high-level language, it has high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to a much larger problem domain than Awk or even Perl, yet many things are at least as easy in Python as in those languages.
+            </p>
+    </header>
+
+    <header id="informal_stuff">An Informal Introduction
+        <p id="informal-about"> In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+            You can toggle the display of prompts and output by clicking on >>> in the upper-right corner of an example box. If you hide the prompts and output for an example, then you can easily copy and paste the input lines into your interpreter.
+            Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text"># this is the first comment
+
+spam = 1  # and this is the second comment
+
+# ... and now a third!
+
+text = "# This is not a comment because it's inside quotes."
+               
+            </textarea>
+        </div>
+
+        <h3>Numbers</h3>
+        <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-numbers">
+>>> 2 + 2
+4
+>>> 50 - 5*6
+20
+>>> (50 - 5*6) / 4
+5.0
+>>> 8 / 5  # division always returns a floating point number
+1.6
+</textarea>
+        </div>
+        <p>The integer numbers (e.g. 2, 4, 20) have type int, the ones with a fractional part (e.g. 5.0, 1.6) have type float. We will see more about numeric types later in the tutorial.
+            Division (/) always returns a float. To do floor division and get an integer result (discarding any fractional result) you can use the // operator; to calculate the remainder you can use %:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-numbers-1">
+>>> 17 / 3  # classic division returns a float
+5.666666666666667
+>>>
+>>> 17 // 3  # floor division discards the fractional part
+5
+>>> 17 % 3  # the % operator returns the remainder of the division
+2
+>>> 5 * 3 + 2  # floored quotient * divisor + remainder
+17
+            </textarea>
+        </div>
+        <p>With Python, it is possible to use the ** operator to calculate powers:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-numbers-2">
+>>> 5 ** 2  # 5 squared
+25
+>>> 2 ** 7  # 2 to the power of 7
+128
+            </textarea>
+        </div>
+
+        <p>The equal sign (=) is used to assign a value to a variable. Afterwards, no result is displayed before the next interactive prompt:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-numbers-3">
+>>> width = 20
+>>> height = 5 * 9
+>>> width * height
+900       
+            </textarea>
+        </div>
+        <p>If a variable is not “defined” (assigned a value), trying to use it will give you an error:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-numbers-4">
+>>> n  # try to access an undefined variable
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'n' is not defined
+            </textarea>
+        </div>
+        <p>There is full support for floating point; operators with mixed type operands convert the integer operand to floating point:</p>
+        <div id="box-informal">
+           <textarea readonly id="box-informal-text-numbers-5">
+>>> 4 * 3.75 - 1
+14.0        
+           </textarea>
+        </div>
+        <p>In interactive mode, the last printed expression is assigned to the variable _. This means that when you are using Python as a desk calculator, it is somewhat easier to continue calculations, for example:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-numbers-6">
+>>> tax = 12.5 / 100
+>>> price = 100.50
+>>> price * tax
+12.5625
+>>> price + _
+113.0625
+>>> round(_, 2)
+113.06
+            </textarea>
+        </div>
+        <p>This variable should be treated as read-only by the user. Don't explicitly assign a value to it — you would create an independent local variable with the same name masking the built-in variable with its magic behavior.
+
+            In addition to int and float, Python supports other types of numbers, such as Decimal and Fraction. Python also has built-in support for complex numbers, and uses the j or J suffix to indicate the imaginary part (e.g. 3+5j).</p>
+
+        <h3>Strings</h3>
+        <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result. \ can be used to escape quotes:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings">>>> 'spam eggs'  # single quotes
+'spam eggs'
+>>> 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+>>> "doesn't"  # ...or use double quotes instead
+"doesn't"
+>>> '"Yes," they said.'
+'"Yes," they said.'
+>>> "\"Yes,\" they said."
+'"Yes," they said.'
+>>> '"Isn\'t," they said.'
+'"Isn\'t," they said.'
+            </textarea>
+        </div>
+        <p>In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The print() function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-1">
+>>> '"Isn\'t," they said.'
+'"Isn\'t," they said.'
+>>> print('"Isn\'t," they said.')
+"Isn't," they said.
+>>> s = 'First line.\nSecond line.'  # \n means newline
+>>> s  # without print(), \n is included in the output
+'First line.\nSecond line.'
+>>> print(s)  # with print(), \n produces a new line
+First line.
+Second line.
+</textarea>
+        </div>
+        <p>If you don't want characters prefaced by \ to be interpreted as special characters, you can use raw strings by adding an r before the first quote:</p>
+        <div id='box-informal'>
+        <textarea readonly id="box-informal-text-strings-2">
+>>> print('C:\some\name')  # here \n means newline!
+C:\some
+name
+>>> print(r'C:\some\name')  # note the r before the quote
+C:\some\name   
+        </textarea>
+        </div>
+        <p>String literals can span multiple lines. One way is using triple-quotes: """...""" or '''...'''. End of lines are automatically included in the string, but it's possible to prevent this by adding a \ at the end of the line. The following example:
+        </p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-3">
+print("""\
+Usage: thingy [OPTIONS]
+     -h                        Display this usage message
+     -H hostname               Hostname to connect to
+""")
+            </textarea>
+        </div>
+        <p>produces the following output (note that the initial newline is not included):</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-4">
+Usage: thingy [OPTIONS]
+        -h                        Display this usage message
+        -H hostname               Hostname to connect to    
+            </textarea>
+        </div>
+        <p>Strings can be concatenated (glued together) with the + operator, and repeated with *:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-5">
+>>> # 3 times 'un', followed by 'ium'
+>>> 3 * 'un' + 'ium'
+'unununium'     
+            </textarea>
+        </div>
+
+        <p>Two or more string literals (i.e. the ones enclosed between quotes) next to each other are automatically concatenated.</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-6">
+>>> 'Py' 'thon'
+'Python'  
+            </textarea>
+        </div>
+
+        <p>This feature is particularly useful when you want to break long strings:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-7">
+>>> text = ('Put several strings within parentheses '
+...         'to have them joined together.')
+>>> text
+'Put several strings within parentheses to have them joined together.' 
+            </textarea>
+        </div>
+
+        <p>This only works with two literals though, not with variables or expressions:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-8">
+>>> prefix = 'Py'
+>>> prefix 'thon'  # can't concatenate a variable and a string literal
+  File "<stdin>", line 1
+    prefix 'thon'
+                ^
+SyntaxError: invalid syntax
+>>> ('un' * 3) 'ium'
+  File "<stdin>", line 1
+    ('un' * 3) 'ium'
+                   ^
+SyntaxError: invalid syntax 
+            </textarea>
+        </div>
+        <p>Python strings cannot be changed — they are immutable. Therefore, assigning to an indexed position in the string results in an error:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-9">
+>>> word[0] = 'J'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> word[2:] = 'py'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment    
+            </textarea>
+        </div>
+        <p>If you need a different string, you should create a new one:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-10">
+>>> 'J' + word[1:]
+'Jython'
+>>> word[:2] + 'py'
+'Pypy'     
+            </textarea>
+        </div>
+        <p>The built-in function len() returns the length of a string:</p>
+        <div id="box-informal">
+            <textarea readonly id="box-informal-text-strings-11">
+>>> s = 'supercalifragilisticexpialidocious'
+>>> len(s)
+34        
+            </textarea>
+        </div>
+        </header>
+        
+    <header id="more_controlling_tools">
+    More Controlling Tools
+
+    <p id="controlling-tools-about">
+        Besides the while statement just introduced, Python uses the usual flow control statements known from other languages, with some twists.
+    </p>
+
+    <h3>if Statements</h3>
+    <p>Perhaps the most well-known statement type is the if statement. For example:</p>
+    <div id="box-control">
+        <textarea readonly id="box-control-if">
+>>> x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+>>> if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')
+...
+More   
+        </textarea>
+    </div>
+
+    <p>There can be zero or more elif parts, and the else part is optional. The keyword 'elif' is short for 'else if', and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.
+
+        If you're comparing the same value to several constants, or checking for specific types or attributes, you may also find the match statement useful. For more details see match Statements.</p>
+    
+    
+    <h3>for Statements</h3>
+    <p>The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python's for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):</p>
+    <div id="box-control">
+        <textarea readonly id="box-control-for">
+>>> # Measure some strings:
+... words = ['cat', 'window', 'defenestrate']
+>>> for w in words:
+...     print(w, len(w))
+...
+cat 3
+window 6
+defenestrate 12
+        </textarea>
+    </div>
+    <p>Code that modifies a collection while iterating over that same collection can be tricky to get right. Instead, it is usually more straight-forward to loop over a copy of the collection or to create a new collection:</p>
+    <div id="box-control">
+        <textarea readonly id="box-contorl-for-1">
+# Create a sample collection
+users = {'Hans': 'active', 'Éléonore': 'inactive', '景太郎': 'active'}
+
+# Strategy:  Iterate over a copy
+for user, status in users.copy().items():
+    if status == 'inactive':
+        del users[user]
+
+# Strategy:  Create a new collection
+active_users = {}
+for user, status in users.items():
+    if status == 'active':
+        active_users[user] = status   
+        </textarea>
+    </div>
+    <h3>The range() Function</h3>
+    <p>If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates arithmetic progressions:</p>
+    <div id="box-control">
+        <textarea readonly id="box-control-range">
+>>> for i in range(5):
+...     print(i)
+...
+0
+1
+2
+3
+4    
+        </textarea>
+    </div>
+    
+    <h3>break and continue Statements, and else Clauses on Loops</h3>
+    <p>The break statement, like in C, breaks out of the innermost enclosing for or while loop.
+        Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the iterable (with for) or when the condition becomes false (with while), but not when the loop is terminated by a break statement. This is exemplified by the following loop, which searches for prime numbers:</p>
+    <div id="box-control">
+        <textarea readonly id="box-control-break-continue">
+>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print(n, 'equals', x, '*', n//x)
+...             break
+...     else:
+...         # loop fell through without finding a factor
+...         print(n, 'is a prime number')
+...
+2 is a prime number
+3 is a prime number
+4 equals 2 * 2
+5 is a prime number
+6 equals 2 * 3
+7 is a prime number
+8 equals 2 * 4
+9 equals 3 * 3     
+        </textarea>
+    </div>
+    <p>(Yes, this is the correct code. Look closely: the else clause belongs to the for loop, not the if statement.)
+
+        When used with a loop, the else clause has more in common with the else clause of a try statement than it does with that of if statements: a try statement's else clause runs when no exception occurs, and a loop's else clause runs when no break occurs. For more on the try statement and exceptions, see Handling Exceptions.</p>
+    
+    <p>The continue statement, also borrowed from C, continues with the next iteration of the loop:</p>
+        <div id="box-control">
+        <textarea readonly id="box-control-break-continue-1">
+>>> for num in range(2, 10):
+...     if num % 2 == 0:
+...         print("Found an even number", num)
+...         continue
+...     print("Found an odd number", num)
+...
+Found an even number 2
+Found an odd number 3
+Found an even number 4
+Found an odd number 5
+Found an even number 6
+Found an odd number 7
+Found an even number 8
+Found an odd number 9
+        </textarea>
+
+    </div>
+
+</header>
+
+<header id="data_structures">
+    Data Structures
+
+    <p id="about-data-structues">This chapter describes some things you've learned about already in more detail, and adds some new things as well.</p>
+
+    <h3>More on Lists</h3>
+    <p>The list data type has some more methods. Here are all of the methods of list objects:</p>
+    <ul>
+     <li>list.append(x)</li>   
+     <p>Add an item to the end of the list. Equivalent to a[len(a):] = [x].</p>
+     <li>list.extend(iterable)</li>
+     <p>Extend the list by appending all the items from the iterable. Equivalent to a[len(a):] = iterable.</p>
+     <li>list.insert(i, x)</li>
+     <p>Insert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).</p>
+     <li>list.remove(x)</li>   
+     <p>Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.</p>
+     <li>list.pop([i])</li>
+     <p>Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)</p>
+     <li>list.clear()</li>   
+     <p>Remove all items from the list. Equivalent to del a[:].</p>
+     <li>list.index(x[, start[, end]])</li>
+     <p>Return zero-based index in the list of the first item whose value is equal to x. Raises a ValueError if there is no such item.
+
+        The optional arguments start and end are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the start argument.</p>
+     <li>list.count(x)</li>
+     <p>Return the number of times x appears in the list.</p>
+     <li>list.sort(*, key=None, reverse=False)</li>
+     <p>Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).</p>
+     <li>list.reverse()</li>
+     <p>Reverse the elements of the list in place.</p>
+     <li>list.copy()</li>
+     <p>Return a shallow copy of the list. Equivalent to a[:].</p>
+    </ul>
+    <p>An example that uses most of the list methods:</p>
+    <div id="box-data-structures">
+        <textarea raedonly id="data-structures-list">
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.count('apple')
+2
+>>> fruits.count('tangerine')
+0
+>>> fruits.index('banana')
+3
+>>> fruits.index('banana', 4)  # Find next banana starting a position 4
+6
+>>> fruits.reverse()
+>>> fruits
+['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange']
+>>> fruits.append('grape')
+>>> fruits
+['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange', 'grape']
+>>> fruits.sort()
+>>> fruits
+['apple', 'apple', 'banana', 'banana', 'grape', 'kiwi', 'orange', 'pear']
+>>> fruits.pop()
+'pear'
+        </textarea>
+    </div>
+    <p>You might have noticed that methods like insert, remove or sort that only modify the list have no return value printed - they return the default None. This is a design principle for all mutable data structures in Python.
+
+        Another thing you might notice is that not all data can be sorted or compared. For instance, [None, 'hello', 10] doesn't sort because integers can't be compared to strings and None can't be compared to other types. Also, there are some types that don't have a defined ordering relation. For example, 3+4j < 5+7j isn't a valid comparison.</p>
+
+    </header>
+
+    <header id="modules-py">
+        Modules
+
+    <p id="about-modules">
+If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.
+To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level and in calculator mode).
+A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module's name (as a string) is available as the value of the global variable __name__. For instance, use your favorite text editor to create a file called fibo.py in the current directory with the following contents:
+    </p>
+
+    <div id="box-modules">
+        <textarea readonly id="modules-1">
+# Fibonacci numbers module
+
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+def fib2(n):   # return Fibonacci series up to n
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a+b
+    return result
+            
+        </textarea>
+    </div>
+    <p>If you intend to use a function often you can assign it to a local name:</p>
+    <div id="box-modules">
+        <textarea readonly id="modules-2">
+>>> fib = fibo.fib
+>>> fib(500)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 
+        </textarea>
+
+    </div>
+
+    </header>
+
+    <header id="input_output">
+        Input And Output
+        <p id="about-i-o">
+            There are several ways to present the output of a program; data can be printed in a human-readable form, or written to a file for future use. This chapter will discuss some of the possibilities. 
+        </p>
+
+
+        <h3>Fancy Output Formatting</h3>
+        <p>So far we've encountered two ways of writing values: expression statements and the print() function. (A third way is using the write() method of file objects; the standard output file can be referenced as sys.stdout. See the Library Reference for more information on this.)
+
+            Often you'll want more control over the formatting of your output than simply printing space-separated values. There are several ways to format output.</p>
+
+        <p>To use formatted string literals, begin a string with f or F before the opening quotation mark or triple quotation mark. Inside this string, you can write a Python expression between { and } characters that can refer to variables or literal values.</p>
+        <div id="box-io">
+            <textarea readonly id="io-output">
+>>> year = 2016
+>>> event = 'Referendum'
+>>> f'Results of the {year} {event}'
+'Results of the 2016 Referendum'
+            </textarea>
+        </div>
+
+        <p>The str.format() method of strings requires more manual effort. You'll still use { and } to mark where a variable will be substituted and can provide detailed formatting directives, but you'll also need to provide the information to be formatted.</p>
+        <div id="box-io">
+            <textarea readonly id="io-output-1">
+>>> yes_votes = 42_572_654
+>>> no_votes = 43_132_495
+>>> percentage = yes_votes / (yes_votes + no_votes)
+>>> '{:-9} YES votes  {:2.2%}'.format(yes_votes, percentage)
+' 42572654 YES votes  49.67%'
+            </textarea>
+        </div>
+    <p>Finally, you can do all the string handling yourself by using string slicing and concatenation operations to create any layout you can imagine. The string type has some methods that perform useful operations for padding strings to a given column width.</p>
+     <p>When you don't need fancy output but just want a quick display of some variables for debugging purposes, you can convert any value to a string with the repr() or str() functions.</p>   
+    <p>The str() function is meant to return representations of values which are fairly human-readable, while repr() is meant to generate representations which can be read by the interpreter (or will force a SyntaxError if there is no equivalent syntax). For objects which don't have a particular representation for human consumption, str() will return the same value as repr(). Many values, such as numbers or structures like lists and dictionaries, have the same representation using either function. Strings, in particular, have two distinct representations.</p>
+    
+    <p>Some examples:</p>
+    <div id="box-io">
+        <textarea readonly id="io-output-2">
+>>> s = 'Hello, world.'
+>>> str(s)
+'Hello, world.'
+>>> repr(s)
+"'Hello, world.'"
+>>> str(1/7)
+'0.14285714285714285'
+>>> x = 10 * 3.25
+>>> y = 200 * 200
+>>> s = 'The value of x is ' + repr(x) + ', and y is ' + repr(y) + '...'
+>>> print(s)
+The value of x is 32.5, and y is 40000...
+>>> # The repr() of a string adds string quotes and backslashes:
+... hello = 'hello, world\n'
+>>> hellos = repr(hello)
+>>> print(hellos)
+'hello, world\n'
+>>> # The argument to repr() may be any Python object:
+... repr((x, y, ('spam', 'eggs')))
+"(32.5, 40000, ('spam', 'eggs'))"   
+        </textarea>
+
+
+    </div>
+
+    <p>The string module contains a Template class that offers yet another way to substitute values into strings, using placeholders like $x and replacing them with values from a dictionary, but offers much less control of the formatting.</p>
+</header>
+
+<header id="errors_exceptions">
+    Errors and Exceptions
+    <p id="about-errors-exceptions">Until now error messages haven't been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax errors and exceptions.</p>
+    <h3>Syntax Errors</h3>
+    <p>Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:</p>
+    <div id="box-ee">
+        <textarea readonly id="syntax-errors">
+>>> while True print('Hello world')
+  File "<stdin>", line 1
+    while True print('Hello world')
+                   ^
+SyntaxError: invalid syntax  
+        </textarea>
+    </div>
+
+    <p>The parser repeats the offending line and displays a little 'arrow' pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow: in the example, the error is detected at the function print(), since a colon (':') is missing before it. File name and line number are printed so you know where to look in case the input came from a script.</p>
+    <h3>Exceptions</h3>
+    <p>Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal: you will soon learn how to handle them in Python programs. Most exceptions are not handled by programs, however, and result in error messages as shown here:</p>
+    <div id="box-ee">
+        <textarea readonly id="exceptions-1">
+>>> 10 * (1/0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+>>> 4 + spam*3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'spam' is not defined
+>>> '2' + 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+        </textarea>
+    </div>
+
+    <h3>User-defined Exceptions</h3>
+    <p>Programs may name their own exceptions by creating a new exception class (see Classes for more about Python classes). Exceptions should typically be derived from the Exception class, either directly or indirectly.
+        Exception classes can be defined which do anything any other class can do, but are usually kept simple, often only offering a number of attributes that allow information about the error to be extracted by handlers for the exception.
+        Most exceptions are defined with names that end in “Error”, similar to the naming of the standard exceptions.    
+        Many standard modules define their own exceptions to report errors that may occur in functions they define. More information on classes is presented in chapter Classes.</p>
+
+</header>
+
+<header id="classes_py">
+    Classes
+
+<p id="about-classes">Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.</p>
+<p id="about-classes">Compared with other programming languages, Python's class mechanism adds classes with a minimum of new syntax and semantics. It is a mixture of the class mechanisms found in C++ and Modula-3. Python classes provide all the standard features of Object Oriented Programming: the class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data. As is true for modules, classes partake of the dynamic nature of Python: they are created at runtime, and can be modified further after creation.</p>
+<p id="about-classes">In C++ terminology, normally class members (including the data members) are public (except Private Variables), and all member functions are virtual. As in Modula-3, there are no shorthands for referencing the object's members from its methods: the method function is declared with an explicit first argument representing the object, which is provided implicitly by the call. As in Smalltalk, classes themselves are objects. This provides semantics for importing and renaming. Unlike C++ and Modula-3, built-in types can be used as base classes for extension by the user. Also, like in C++, most built-in operators with special syntax (arithmetic operators, subscripting etc.) can be redefined for class instances.</p>
+<p id="about-classes">(Lacking universally accepted terminology to talk about classes, I will make occasional use of Smalltalk and C++ terms. I would use Modula-3 terms, since its object-oriented semantics are closer to those of Python than C++, but I expect that few readers have heard of it.)</p>
+
+<h3>A Word About Names and Objects</h3>
+<p>Objects have individuality, and multiple names (in multiple scopes) can be bound to the same object. This is known as aliasing in other languages. This is usually not appreciated on a first glance at Python, and can be safely ignored when dealing with immutable basic types (numbers, strings, tuples). However, aliasing has a possibly surprising effect on the semantics of Python code involving mutable objects such as lists, dictionaries, and most other types. This is usually used to the benefit of the program, since aliases behave like pointers in some respects. For example, passing an object is cheap since only a pointer is passed by the implementation; and if a function modifies an object passed as an argument, the caller will see the change — this eliminates the need for two different argument passing mechanisms as in Pascal.</p>
+<h3>Python Scopes and Namespaces</h3>
+<p>Before introducing classes, I first have to tell you something about Python's scope rules. Class definitions play some neat tricks with namespaces, and you need to know how scopes and namespaces work to fully understand what's going on. Incidentally, knowledge about this subject is useful for any advanced Python programmer.</p>
+<p>Let's begin with some definitions.</p>
+<p>A namespace is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries, but that's normally not noticeable in any way (except for performance), and it may change in the future. Examples of namespaces are: the set of built-in names (containing functions such as abs(), and built-in exception names); the global names in a module; and the local names in a function invocation. In a sense the set of attributes of an object also form a namespace. The important thing to know about namespaces is that there is absolutely no relation between names in different namespaces; for instance, two different modules may both define a function maximize without confusion — users of the modules must prefix it with the module name.</p>
+<p>By the way, I use the word attribute for any name following a dot — for example, in the expression z.real, real is an attribute of the object z. Strictly speaking, references to names in modules are attribute references: in the expression modname.funcname, modname is a module object and funcname is an attribute of it. In this case there happens to be a straightforward mapping between the module's attributes and the global names defined in the module: they share the same namespace!</p>
+<p>Attributes may be read-only or writable. In the latter case, assignment to attributes is possible. Module attributes are writable: you can write modname.the_answer = 42. Writable attributes may also be deleted with the del statement. For example, del modname.the_answer will remove the attribute the_answer from the object named by modname.</p>
+<p>Namespaces are created at different moments and have different lifetimes. The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted. The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits. The statements executed by the top-level invocation of the interpreter, either read from a script file or interactively, are considered part of a module called __main__, so they have their own global namespace. (The built-in names actually also live in a module; this is called builtins.)</p>
+<p>A scope is a textual region of a Python program where a namespace is directly accessible. “Directly accessible” here means that an unqualified reference to a name attempts to find the name in the namespace.</p>
+<p>Although scopes are determined statically, they are used dynamically. At any time during execution, there are 3 or 4 nested scopes whose namespaces are directly accessible:
+</p>
+<ul>
+    <li>the innermost scope, which is searched first, contains the local names</li>
+    <li>the scopes of any enclosing functions, which are searched starting with the nearest enclosing scope, contains non-local, but also non-global names</li>
+    <li>the next-to-last scope contains the current module's global names</li>
+    <li>the outermost scope (searched last) is the namespace containing built-in names</li>
+</ul>
+<p>If a name is declared global, then all references and assignments go directly to the middle scope containing the module's global names. To rebind variables found outside of the innermost scope, the nonlocal statement can be used; if not declared nonlocal, those variables are read-only (an attempt to write to such a variable will simply create a new local variable in the innermost scope, leaving the identically named outer variable unchanged).</p>
+</header>
+    
+<header id="what_is_next">
+    What's Next?
+
+<p id="about-what-is-next">
+    Well, there's lots of stuff that one can do after going through all this practice(practice makes perfect) madness. The best teacher that we all know is teacher and without doing some projects here and there, nothing will happen magically, so we can assume that if you don't want to get stuck inside the "Tutorial Loop", my suggestion will be to start working on some projects, build things that you would wish to have built years ago, even if it's already been created, you still have an ability to develop something new, something unique, because you are legendary. Don't be sad, be awesome instead and as always, don't have a good day, have a great day fella!
+</p>
+</header>
+
+    <h3 id="copy">&copy <a target="_blank" href="https://docs.python.org/3/" id="link-docs-py">docs.python.org</a></h3>
+
+</section>
+
+
+
+</div>
+</div>
+
+
+</body>
+</main>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 20px;
+    
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(114, 106, 128);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(50, 9, 126);
+    border-radius: 10px;
+  }
+
+::-webkit-scrollbar-track{
+    background-color: rgb(156, 155, 154);
+}
+
+#navbar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: rgb(80, 80, 80);
+}
+
+#py-doc{
+    
+    overflow-x: hidden;
+    font-size: 25px;
+    color: aliceblue;
+    text-align: center;
+    font-family:'Open Sans','Times New Roman', Times, serif ;
+    top: 0;
+    left: 0;
+    padding-top: 13px;
+    padding-bottom: -20px;
+}
+#py-logo{
+    padding-bottom: -20px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    width: 50px;
+    height: 50px;
+}
+.nav-link{
+    padding-top: 20px;
+    font-size: 12px;
+    color:rgb(173, 173, 177);
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#first, #second, #third, #fourth, #fifth, #sixth, #seventh, #eighth, #nineth, #tenth{
+    text-decoration: none;
+    color: rgb(173, 173, 177);
+}
+
+#introduction,#more-control, #informal, #i-o, #errors{
+    padding: 10px;
+}
+
+#data-structures{
+    padding: 5px;
+}
+
+#more-control{
+    font-size: 15px;
+}
+#informal{
+    font-size: 14px;
+   padding: 15px;
+}
+#must-know{
+    font-size: 20px;
+}
+#i-o{
+
+    font-size: 15px;
+}
+
+#errors{
+    font-size: 15px;
+}
+#introduction:hover, #must-know:hover, #informal:hover, #more-control:hover, #data-structures:hover, #modules:hover, #i-o:hover, #errors:hover, #classes:hover, #whats-next:hover{
+    transform: scale(1.3);
+    color: rgb(114, 106, 128);
+    cursor: pointer;
+   
+}
+
+ul{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+ul p{
+    color: rgb(110, 107, 107);
+}
+
+
+#whole-thing{
+    display: flex;
+    padding-left: 260px;
+}
+
+#section-box{
+   overflow-x: auto;
+    
+
+}
+
+#what_is_python, #must_know, #informal_stuff, #more_controlling_tools, #data_structures, #modules-py, #input_output, #errors_exceptions, #classes_py, #what_is_next{
+    font-family: 'Open Sans','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    
+}
+
+#about, #m-k-about, #informal-about, #controlling-tools-about, #about-data-structues, #about-modules, #about-i-o, #about-errors-exceptions, #about-classes, #about-what-is-next{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(3, 3, 3);
+    font-family: 'Lato', Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+#link-to-py-org{
+    text-decoration: none;
+    color: blue;
+}
+
+
+#box-informal-text{
+    width: 720px;
+    height: 225px;
+    padding-left: 5px;
+    font-size: 20px;
+    
+    
+    color: rgb(172, 29, 29);
+}
+
+h3{
+    font-size: 30px;
+    font-weight: lighter;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: rgb(114, 106, 128);
+}
+
+#box-informal-text-numbers{
+    width: 700px;
+    height: 230px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-numbers-1{
+    width: 700px;
+    height: 270px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#section-box p{
+    margin-top: 0px;
+    font-size: 20px;
+    font-family: 'Lato', Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+#box-informal-text-numbers-2{
+    width: 700px;
+    height: 128px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-numbers-3{
+    width: 700px;
+    height: 128px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-numbers-4{
+    width: 700px;
+    height: 128px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-numbers-5{
+    width: 700px;
+    height: 80px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-numbers-6{
+    width: 700px;
+    height: 225px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings{
+    width: 700px;
+    height: 320px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-1{
+    width: 700px;
+    height: 280px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-2{
+    width: 700px;
+    height: 150px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-3{
+    width: 700px;
+    height: 150px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-strings-4{
+    width: 700px;
+    height: 110px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-5{
+    width: 700px;
+    height: 110px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-6{
+    width: 700px;
+    height: 80px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-strings-7{
+    width: 700px;
+    height: 150px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-8{
+    width: 700px;
+    height: 320px;
+
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-informal-text-strings-9{
+    width: 700px;
+    height: 225px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-strings-10{
+    width: 700px;
+    height: 130px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+#box-informal-text-strings-11{
+    width: 700px;
+    height: 110px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-control-if{
+    width: 700px;
+    height: 345px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-control-for{
+    width: 700px;
+    height: 225px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-contorl-for-1{
+    width: 700px;
+    height: 370px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-control-range{
+    width: 700px;
+    height: 225px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);
+}
+
+#box-control-break-continue{
+    width: 700px;
+    height: 440px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);  
+}
+
+#box-control-break-continue-1{
+    width: 700px;
+    height: 370px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);   
+}
+
+#data-structures-list{
+    width: 700px;
+    height: 630px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);   
+}
+
+#modules-1{
+    width: 700px;
+    height: 440px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);   
+}
+
+#modules-2{
+    width: 700px;
+    height: 110px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);   
+}
+
+#io-output{
+    width: 700px;
+    height: 140px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);   
+}
+
+#io-output-1{
+    width: 700px;
+    height: 150px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);  
+}
+#io-output-2{
+    width: 700px;
+    height: 560px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);   
+}
+
+#syntax-errors{
+    width: 700px;
+    height: 150px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);  
+}
+
+#exceptions-1{
+    width: 700px;
+    height: 320px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(172, 29, 29);  
+}
+
+#copyright-info{
+    width: auto;
+    margin-left: 0;
+    margin-right: -8px;
+    margin-bottom: -10px;
+    margin-top: 10px;
+    height: 20px;
+    background-color: rgb(80, 79, 79);
+}
+
+#copy{
+    text-align: center;
+    font-size: 20px;
+    color: rgb(36, 33, 30);
+}
+
+#link-docs-py{
+    color: rgb(36, 33, 30);
+    cursor: pointer;
+    text-decoration: none;
+}
+</style>
